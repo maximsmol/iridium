@@ -1,0 +1,138 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  position: sticky;
+  top: 0;
+
+  width: 275px;
+  padding: 0 13px;
+
+  padding-top: 2px; /* to fit the focus highlight */
+
+  & a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  & :global(.lucide) {
+    width: 1.35em;
+    height: 1.35em;
+  }
+}
+
+.transition {
+  transition-property: background-color, box-shadow;
+  transition-duration: var(--transition-duration);
+}
+
+.logo {
+  composes: round from "../../css/theme.module.css";
+
+  composes: transition;
+
+  display: flex;
+  align-items: center;
+  gap: 1em;
+
+  padding: 0.5em;
+
+  font-weight: bold;
+
+  & svg {
+    font-size: var(--font-size-h1);
+  }
+}
+.logo:focus {
+  outline: none;
+  box-shadow: var(--shadow-focus-action);
+}
+.logo:hover {
+  background-color: var(--colors-halo-action);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+
+  padding-bottom: 0.5em;
+}
+
+.nav-item {
+  composes: h3 from "../../css/typography.module.css";
+  composes: round from "../../css/theme.module.css";
+
+  composes: transition;
+
+  display: flex;
+  align-items: center;
+  gap: 1em;
+
+  padding: 0.5em;
+  padding-right: 1.5em;
+
+  font-weight: bold;
+}
+.nav-item:focus {
+  outline: none;
+  box-shadow: var(--shadow-focus-foreground);
+}
+.nav-item:hover {
+  background-color: var(--colors-halo-foreground);
+}
+
+.notification-icon-container {
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+.notification-icon-dot {
+  composes: round from "../../css/theme.module.css";
+
+  position: absolute;
+
+  top: -0.2em;
+  right: -0.1em;
+
+  width: 0.5em;
+  height: 0.5em;
+
+  background-color: var(--colors-action);
+}
+
+.content-area {
+  display: flex;
+  flex-direction: column;
+}
+
+.btnPost {
+  composes: h3 from "../../css/typography.module.css";
+  composes: round from "../../css/theme.module.css";
+
+  composes: transition;
+
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: calc(14.75em / 22) 2em;
+
+  font-weight: bold;
+  border: none;
+  background-color: var(--colors-action);
+
+  color: inherit;
+  text-decoration: none;
+
+  box-shadow: #00000014 0 8px 28px;
+}
+.btnPost:focus {
+  outline: none;
+  box-shadow: var(--shadow-focus-action);
+}
+.btnPost:focus,
+.btnPost:hover {
+  background-color: var(--colors-hover-action);
+}
