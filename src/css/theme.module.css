@@ -1,0 +1,44 @@
+:root {
+  /* colors */
+  --colors-background: #000;
+  --colors-foreground: #e7e9ea;
+  --colors-action: #1d9bf0;
+
+  --colors-hover-action: #1a8cd8;
+
+  --colors-halo-action: #1c9bf01a;
+  --colors-halo-foreground: #e7e9ea1a;
+
+  --colors-focus-action: #8ecdf8;
+  --colors-focus-foreground: #f3f4f5;
+  --colors-focus-image: #c7e6fc;
+
+  /* shadows */
+  --shadow-focus-width: 2px;
+
+  --shadow-focus-action: var(--colors-focus-action) 0 0 0
+    var(--shadow-focus-width);
+  --shadow-focus-foreground: var(--colors-focus-foreground) 0 0 0
+    var(--shadow-focus-width);
+  --shadow-focus-image: var(--colors-focus-image) 0 0 0
+    var(--shadow-focus-width);
+
+  /* fonts */
+
+  --font-primary: "Atkinson Hyperlegible", sans-serif;
+
+  /* font sizes */
+  --font-size-base-px: 16;
+  --font-size-base: calc(var(--font-size-base-px) / 16 * 1rem);
+  --font-size-h1: calc(26 / var(--font-size-base-px) * 1rem);
+  --font-size-h2: calc(24 / var(--font-size-base-px) * 1rem);
+  --font-size-h3: calc(22 / var(--font-size-base-px) * 1rem);
+  --font-size-h4: calc(19 / var(--font-size-base-px) * 1rem);
+
+  /* transition */
+  --transition-duration: 0.2s;
+}
+
+.round {
+  border-radius: 9999px;
+}

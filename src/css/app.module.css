@@ -1,0 +1,26 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: var(--colors-background);
+  color: var(--colors-foreground);
+
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+}
+
+:global(.lucide) {
+  width: 1em;
+  height: 1em;
+}
+
+:global(#app-root) {
+  display: flex;
+  height: 100%;
+}
