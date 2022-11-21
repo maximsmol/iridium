@@ -119,6 +119,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <button class={styles.newPostBanner}>Show 1 New Post</button>
         <Post>Test post</Post>
         <Post>Test post</Post>
         <Post>Test post</Post>
