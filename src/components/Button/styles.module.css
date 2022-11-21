@@ -1,0 +1,77 @@
+.container {
+  composes: round from "../../css/theme.module.css";
+
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  font: inherit;
+
+  transition-property: background-color, box-shadow;
+  transition-duration: var(--transition-duration);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+
+  padding: 0.5em;
+  padding-right: 1.5em;
+
+  font-weight: bold;
+
+  &.h1 {
+    font-size: var(--font-size-h1);
+  }
+  &.h2 {
+    font-size: var(--font-size-h2);
+  }
+  &.h3 {
+    font-size: var(--font-size-h3);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: var(--shadow-focus-foreground);
+  }
+  &:hover {
+    background-color: var(--colors-halo-foreground);
+  }
+
+  &.icon-only {
+    font-size: inherit;
+    padding-right: 0.5em;
+
+    &.h1 > svg {
+      font-size: var(--font-size-h1);
+    }
+    &.h2 > svg {
+      font-size: var(--font-size-h2);
+    }
+    &.h3 > svg {
+      font-size: var(--font-size-h3);
+    }
+
+    &:focus {
+      box-shadow: var(--shadow-focus-action);
+    }
+    &:hover {
+      background-color: var(--colors-halo-action);
+    }
+  }
+
+  &.primary {
+    color: var(--colors-foreground);
+    background-color: var(--colors-action);
+
+    box-shadow: #00000014 0 8px 28px;
+
+    &:focus {
+      box-shadow: var(--shadow-focus-action);
+    }
+    &:focus,
+    &:hover {
+      background-color: var(--colors-hover-action);
+    }
+  }
+}

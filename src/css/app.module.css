@@ -15,12 +15,14 @@ body {
   font-size: var(--font-size-base);
 }
 
-:global(.lucide) {
-  width: 1em;
-  height: 1em;
-}
+:global {
+  & .lucide {
+    width: 1em;
+    height: 1em;
+  }
 
-:global(#app-root) {
-  display: flex;
-  height: 100%;
+  & #app-root {
+    display: flex;
+    height: 100%;
+  }
 }
