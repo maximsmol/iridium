@@ -59,7 +59,6 @@
 
   color: var(--colors-action);
   border-top: var(--border-separator);
-  cursor: pointer;
 
   transition-property: background-color, box-shadow;
   transition-duration: var(--transition-duration);

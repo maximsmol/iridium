@@ -1,8 +1,26 @@
 .container {
   display: flex;
-  padding: 18px;
+  flex-direction: column;
+
+  padding: 13px 18px;
 
   border-top: var(--border-separator);
+}
+
+.repost-line {
+  display: flex;
+  align-items: center;
+
+  padding-left: 2.75em;
+  padding-bottom: 0.25em;
+  gap: 0.75em;
+
+  font-weight: bold;
+  color: var(--colors-foregorund-muted);
+
+  & > span {
+    font-size: var(--font-size-diminished);
+  }
 }
 
 .header {
