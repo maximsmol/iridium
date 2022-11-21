@@ -45,6 +45,35 @@
   font-weight: bold;
 }
 
+.new-post-banner {
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+  font: inherit;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 18px;
+
+  color: var(--colors-action);
+  border-top: var(--border-separator);
+  cursor: pointer;
+
+  transition-property: background-color, box-shadow;
+  transition-duration: var(--transition-duration);
+
+  &:focus {
+    outline: none;
+    box-shadow: var(--shadow-focus-action) inset;
+    background-color: #16181c;
+  }
+  &:hover {
+    background-color: #ffffff08;
+  }
+}
+
 .composer-container {
   composes: h2 from "../../css/typography.module.css";
 
