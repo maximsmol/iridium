@@ -19,6 +19,7 @@ export type ButtonProps = {
   icon?: JSX.Element;
   children: string;
 
+  class?: string;
   style?: JSX.CSSProperties;
 };
 
@@ -39,6 +40,7 @@ export default function Button(rawProps: ButtonProps) {
         component={props.href != null ? "a" : "button"}
         class={styles.container}
         classList={{
+          ...(props.class != null ? { [props.class]: true } : {}),
           [styles.iconOnly]: props.labelHidden,
           [styles.h1]: props.size === "h1",
           [styles.h2]: props.size === "h2",

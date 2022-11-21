@@ -29,10 +29,14 @@ export default function LeftSidebar() {
         <Button icon={<Icon.Mail />} href="/mail">
           Messages
         </Button>
-        <Button icon={<Icon.Bookmark />} href="/bookmarks">
+        <Button icon={<Icon.Bookmark />} class={styles.extra} href="/bookmarks">
           Bookmarks
         </Button>
-        <Button icon={<Icon.List />} href="/{username}/lists">
+        <Button
+          icon={<Icon.List />}
+          class={styles.extra}
+          href="/{username}/lists"
+        >
           {/* todo(maximsmol): matching icon */}
           {/* todo(maximsmol): does nothing */}
           Lists
