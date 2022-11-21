@@ -15,6 +15,12 @@
     width: 1.35em;
     height: 1.35em;
   }
+
+  gap: 0.25em;
+
+  @media (min-height: 800px) {
+    gap: 0.5em;
+  }
 }
 
 .sidebar-nav {
@@ -24,6 +30,17 @@
   padding-bottom: 0.5em;
 
   font-size: var(--font-size-h3);
+
+  @media (min-height: 800px) {
+    gap: 0.25em;
+    padding-bottom: 1em;
+  }
+}
+
+.extra {
+  @media (max-height: 799px) {
+    display: none;
+  }
 }
 
 .notification-icon-container {
