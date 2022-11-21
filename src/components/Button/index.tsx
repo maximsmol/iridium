@@ -1,0 +1,58 @@
+import { JSX, mergeProps, Show } from "solid-js";
+import { Dynamic } from "solid-js/web";
+
+import FlexRow from "../FlexRow/FlexRow";
+import styles from "./styles.module.css";
+
+export type ButtonFlavor = "secondary" | "primary";
+export type ButtonSize = "inherit" | "h1" | "h2" | "h3";
+
+export type ButtonProps = {
+  flavor?: ButtonFlavor;
+  size?: ButtonSize;
+
+  labelHidden?: boolean;
+
+  href?: string;
+
+  icon?: JSX.Element;
+  children: string;
+
+  style?: JSX.CSSProperties;
+};
+
+export default function Button(rawProps: ButtonProps) {
+  const props = mergeProps(
+    {
+      flavor: "secondary",
+      size: "inherit",
+
+      hiddenLabel: false,
+    },
+    rawProps
+  );
+
+  return (
+    <FlexRow>
+      <Dynamic
+        component={props.href != null ? "a" : "button"}
+        class={styles.container}
+        classList={{
+          [styles.iconOnly]: props.labelHidden,
+          [styles.h1]: props.size === "h1",
+          [styles.h2]: props.size === "h2",
+          [styles.h3]: props.size === "h3",
+          [styles.primary]: props.flavor === "primary",
+        }}
+        href={props.href}
+        style={props.style}
+        aria-label={props.labelHidden ? props.children : undefined}
+      >
+        {props.icon}
+        <Show when={!props.labelHidden}>
+          <span>{props.children}</span>
+        </Show>
+      </Dynamic>
+    </FlexRow>
+  );
+}

@@ -14,7 +14,7 @@
   padding-top: 2px; /* to fit the focus highlight */
 }
 
-.contentArea {
+.content-area {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -33,6 +33,7 @@
   align-items: center;
 
   padding: 0.5em 0.75em;
+  padding-right: 0.25em;
 
   font-weight: bold;
 }
@@ -75,96 +76,10 @@
   }
 }
 
-.transition {
-  transition-property: background-color, box-shadow;
-  transition-duration: var(--transition-duration);
-}
-
-.avatarContainer {
-  composes: round from "../../css/theme.module.css";
-
-  display: flex;
-}
-.avatarContainer:focus {
-  outline: none;
-  box-shadow: var(--shadow-focus-image);
-}
-
-.avatar {
-  composes: round from "../../css/theme.module.css";
-
-  composes: transition;
-
-  width: 2.5em;
-  height: 2.5em;
-}
-
 .controls {
   display: flex;
   gap: 0.25em;
 
   color: var(--colors-action);
   font-size: 85%;
-}
-
-.button {
-  composes: round from "../../css/theme.module.css";
-
-  composes: transition;
-
-  color: inherit;
-  background-color: transparent;
-  border: none;
-  font: inherit;
-
-  display: flex;
-  align-items: center;
-  gap: 1em;
-
-  padding: 0.5em;
-
-  cursor: pointer;
-  font-weight: bold;
-}
-.button:focus {
-  outline: none;
-  box-shadow: var(--shadow-focus-action);
-}
-.button:hover {
-  background-color: var(--colors-halo-action);
-}
-
-.btnPost {
-  composes: h3 from "../../css/typography.module.css";
-  composes: round from "../../css/theme.module.css";
-
-  composes: transition;
-
-  color: inherit;
-  background-color: transparent;
-  border: none;
-  font: inherit;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding: 0.3em 0.8em;
-
-  border: none;
-  background-color: var(--colors-action);
-
-  color: var(--colors-foreground);
-  text-decoration: none;
-
-  box-shadow: #00000014 0 8px 28px;
-  font-weight: bold;
-}
-.btnPost:focus {
-  outline: none;
-  box-shadow: var(--shadow-focus-action);
-}
-.btnPost:focus,
-.btnPost:hover {
-  background-color: var(--colors-hover-action);
 }

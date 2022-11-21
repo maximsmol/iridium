@@ -1,95 +1,55 @@
 import * as Icon from "lucide-solid";
-import { JSX } from "solid-js";
 
-import FlexRow from "../FlexRow/FlexRow";
+import Button from "../Button";
 import styles from "./styles.module.css";
-
-const navItems = [
-  {
-    icon: <Icon.Home />,
-    href: "/home",
-    title: "Home",
-  },
-  {
-    icon: <Icon.Hash />,
-    href: "/explore",
-    title: "Explore",
-  },
-  {
-    icon: <Icon.Bell />,
-    href: "/notifications",
-    title: "Notifications",
-  },
-  {
-    icon: <Icon.Mail />,
-    href: "/messages",
-    title: "Messages",
-  },
-  {
-    icon: <Icon.Bookmark />,
-    href: "/bookmarks",
-    title: "Bookmarks",
-  },
-];
-
-const NavItem = (props: {
-  href: string;
-  icon: JSX.Element;
-  children: JSX.Element;
-}) => {
-  return (
-    <FlexRow>
-      <a class={styles.navItem} href={props.href}>
-        {props.icon}
-        <span>{props.children}</span>
-      </a>
-    </FlexRow>
-  );
-};
 
 export default function LeftSidebar() {
   return (
     <div class={styles.container}>
-      <FlexRow>
-        <a class={styles.logo} href="/home">
-          <Icon.Aperture />
-        </a>
-      </FlexRow>
+      <Button icon={<Icon.Aperture />} labelHidden size="h1" href="/home">
+        Home
+      </Button>
       <nav class={styles.sidebarNav}>
-        <NavItem icon={<Icon.Home />} href="/home">
+        <Button icon={<Icon.Home />} href="/home">
           Home
-        </NavItem>
-        <NavItem icon={<Icon.Hash />} href="/explore">
+        </Button>
+        <Button icon={<Icon.Hash />} href="/explore">
           Explore
-        </NavItem>
-        <NavItem icon={<Icon.Bell />} href="/notifications">
+        </Button>
+        <Button icon={<Icon.Bell />} href="/notifications">
           Notifications
-        </NavItem>
-        <NavItem icon={<Icon.Mail />} href="/mail">
+        </Button>
+        <Button icon={<Icon.Mail />} href="/mail">
           Messages
-        </NavItem>
-        <NavItem icon={<Icon.Bookmark />} href="/bookmarks">
+        </Button>
+        <Button icon={<Icon.Bookmark />} href="/bookmarks">
           Bookmarks
-        </NavItem>
-        <NavItem icon={<Icon.List />} href="/{username}/lists">
+        </Button>
+        <Button icon={<Icon.List />} href="/{username}/lists">
           {/* todo(maximsmol): matching icon */}
           {/* todo(maximsmol): does nothing */}
           Lists
-        </NavItem>
-        <NavItem icon={<Icon.User />} href="/{username}">
+        </Button>
+        <Button icon={<Icon.User />} href="/{username}">
           {/* todo(maximsmol): does nothing */}
           Profile
-        </NavItem>
-        <NavItem icon={<Icon.CircleEllipsis />} href="/">
+        </Button>
+        <Button icon={<Icon.CircleEllipsis />} href="/">
           {/* todo(maximsmol): does nothing */}
           More
-        </NavItem>
+        </Button>
       </nav>
-      <FlexRow>
-        <a class={styles.btnPost} href="/compose/post">
-          Post
-        </a>
-      </FlexRow>
+      <Button
+        flavor="primary"
+        style={{
+          width: "90%",
+          padding: "calc(14.75em / 22) 2em",
+          "font-size": "var(--font-size-h3)",
+        }}
+        href="/compose/post"
+      >
+        Post
+      </Button>
     </div>
   );
 }

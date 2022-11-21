@@ -3,6 +3,8 @@ import { createSignal, JSX } from "solid-js";
 
 import { randInt } from "../../utils";
 
+import Avatar from "../../components/Avatar";
+import Button from "../../components/Button";
 import FlexGrow from "../../components/FlexGrow";
 import LeftSidebar from "../../components/LeftSidebar";
 import styles from "./styles.module.css";
@@ -16,6 +18,10 @@ type OrderBy = keyof typeof orderByPageNames;
 const orderByIcons: Record<OrderBy, JSX.Element> = {
   time: <Icon.Rss />,
   likes: <Icon.TrendingUp />,
+};
+const orderByText: Record<OrderBy, string> = {
+  time: "Latest Posts",
+  likes: "Top Posts",
 };
 
 const placeholderPhrases = [
@@ -38,17 +44,14 @@ export default function Home() {
           <div>{orderByPageNames[orderBy()]}</div>
           <FlexGrow />
           {/* todo(maximsmol): does nothing */}
-          {orderByIcons[orderBy()]}
+          <Button icon={orderByIcons[orderBy()]} labelHidden>
+            {orderByText[orderBy()]}
+          </Button>
         </div>
         <div class={styles.composerContainer}>
           {/* todo(maximsmol): does nothing */}
           <div>
-            <a class={styles.avatarContainer} href="/{username}">
-              <img
-                class={styles.avatar}
-                src="https://i.pravatar.cc/300?img=1"
-              />
-            </a>
+            <Avatar username="{todo}" />
           </div>
           <div class={styles.composer}>
             <textarea
@@ -58,30 +61,35 @@ export default function Home() {
               }…`}
             />
             <div class={styles.controls}>
-              <button class={styles.button}>
-                <Icon.Image />
-              </button>
-              <button class={styles.button}>
+              <Button icon={<Icon.Image />} labelHidden>
+                Image or Video
+              </Button>
+              <Button icon={<Icon.FileImage />} labelHidden>
                 {/* todo(maximsmol): icon for GIF */}
-                <Icon.FileImage />
-              </button>
-              <button class={styles.button}>
+                GIF
+              </Button>
+              <Button icon={<Icon.List />} labelHidden>
                 {/* todo(maximsmol): icon for poll */}
-                <Icon.List />
-              </button>
-              <button class={styles.button}>
-                <Icon.Smile />
-              </button>
-              <button class={styles.button}>
-                <Icon.CalendarClock />
-              </button>
-              <button class={styles.button}>
-                <Icon.MapPin />
-              </button>
+                Poll
+              </Button>
+              <Button icon={<Icon.Smile />} labelHidden>
+                Emoji
+              </Button>
+              <Button icon={<Icon.CalendarClock />} labelHidden>
+                Schedule
+              </Button>
+              <Button icon={<Icon.MapPin />} labelHidden>
+                Add Location Tag
+              </Button>
               <FlexGrow />
-              <div>
-                <button class={styles.btnPost}>Post</button>
-              </div>
+              <Button
+                flavor="primary"
+                style={{
+                  padding: "0.3em 0.8em",
+                }}
+              >
+                Post
+              </Button>
             </div>
           </div>
         </div>
