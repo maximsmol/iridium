@@ -2,9 +2,12 @@ import { JSX } from "solid-js";
 
 import styles from "./styles.module.css";
 
-export default function Avatar(props: { username: string }): JSX.Element {
+export default function Avatar(props: {
+  username: string;
+  style?: JSX.CSSProperties;
+}): JSX.Element {
   return (
-    <a class={styles.container} href={`/${props.username}`}>
+    <a class={styles.container} href={`/${props.username}`} style={props.style}>
       {/* todo(maximsmol): alt should be a full name? */}
       <img
         alt={props.username}

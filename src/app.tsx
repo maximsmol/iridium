@@ -1,6 +1,8 @@
-import "@fontsource/atkinson-hyperlegible";
 import { Navigate, Route, Router, Routes } from "@solidjs/router";
 import { lazy } from "solid-js";
+
+import "@fontsource/atkinson-hyperlegible/400.css";
+import "@fontsource/atkinson-hyperlegible/700.css";
 
 import "./css/app.module.css";
 import "./css/theme.module.css";
