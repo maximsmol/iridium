@@ -35,7 +35,8 @@
 
   /* font sizes */
   --font-size-base-px: 16;
-  --font-size-base: calc(var(--font-size-base-px) / 16 * 1rem);
+  --font-size-base: calc(16 / var(--font-size-base-px) * 1rem);
+  --font-size-diminished: calc(14 / var(--font-size-base-px) * 1rem);
   --font-size-h1: calc(26 / var(--font-size-base-px) * 1rem);
   --font-size-h2: calc(24 / var(--font-size-base-px) * 1rem);
   --font-size-h3: calc(22 / var(--font-size-base-px) * 1rem);
