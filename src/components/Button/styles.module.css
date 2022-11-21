@@ -51,7 +51,9 @@
     &.h3 > svg {
       font-size: var(--font-size-h3);
     }
+  }
 
+  &.secondary-colored {
     &:focus {
       box-shadow: var(--shadow-focus-action);
     }

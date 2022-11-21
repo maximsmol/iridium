@@ -1,10 +1,11 @@
 import { JSX, mergeProps, Show } from "solid-js";
 import { Dynamic } from "solid-js/web";
 
-import FlexRow from "../FlexRow/FlexRow";
 import styles from "./styles.module.css";
 
-export type ButtonFlavor = "secondary" | "primary";
+import FlexRow from "../FlexRow/FlexRow";
+
+export type ButtonFlavor = "secondary" | "secondary-colored" | "primary";
 export type ButtonSize = "inherit" | "h1" | "h2" | "h3";
 
 export type ButtonProps = {
@@ -42,6 +43,7 @@ export default function Button(rawProps: ButtonProps) {
           [styles.h1]: props.size === "h1",
           [styles.h2]: props.size === "h2",
           [styles.h3]: props.size === "h3",
+          [styles.secondaryColored]: props.flavor === "secondary-colored",
           [styles.primary]: props.flavor === "primary",
         }}
         href={props.href}

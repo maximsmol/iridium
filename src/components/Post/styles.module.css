@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  padding: 18px;
+
+  border-top: var(--border-separator);
+}
+
+.header {
+  display: flex;
+  gap: 0.25em;
+}
+
+.name {
+  font-weight: bold;
+}
+
+.header-data {
+  display: flex;
+  gap: 0.25em;
+
+  color: var(--colors-foregorund-muted);
+}
+
+.content {
+  padding-left: 0.75em;
+  line-height: 1.3;
+}

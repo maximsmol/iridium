@@ -3,11 +3,13 @@ import { createSignal, JSX } from "solid-js";
 
 import { randInt } from "../../utils";
 
+import styles from "./styles.module.css";
+
 import Avatar from "../../components/Avatar";
 import Button from "../../components/Button";
 import FlexGrow from "../../components/FlexGrow";
 import LeftSidebar from "../../components/LeftSidebar";
-import styles from "./styles.module.css";
+import Post from "../../components/Post";
 
 const orderByPageNames = {
   time: "Latest Posts",
@@ -61,24 +63,48 @@ export default function Home() {
               }…`}
             />
             <div class={styles.controls}>
-              <Button icon={<Icon.Image />} labelHidden>
+              <Button
+                flavor="secondary-colored"
+                icon={<Icon.Image />}
+                labelHidden
+              >
                 Image or Video
               </Button>
-              <Button icon={<Icon.FileImage />} labelHidden>
+              <Button
+                flavor="secondary-colored"
+                icon={<Icon.FileImage />}
+                labelHidden
+              >
                 {/* todo(maximsmol): icon for GIF */}
                 GIF
               </Button>
-              <Button icon={<Icon.List />} labelHidden>
+              <Button
+                flavor="secondary-colored"
+                icon={<Icon.List />}
+                labelHidden
+              >
                 {/* todo(maximsmol): icon for poll */}
                 Poll
               </Button>
-              <Button icon={<Icon.Smile />} labelHidden>
+              <Button
+                flavor="secondary-colored"
+                icon={<Icon.Smile />}
+                labelHidden
+              >
                 Emoji
               </Button>
-              <Button icon={<Icon.CalendarClock />} labelHidden>
+              <Button
+                flavor="secondary-colored"
+                icon={<Icon.CalendarClock />}
+                labelHidden
+              >
                 Schedule
               </Button>
-              <Button icon={<Icon.MapPin />} labelHidden>
+              <Button
+                flavor="secondary-colored"
+                icon={<Icon.MapPin />}
+                labelHidden
+              >
                 Add Location Tag
               </Button>
               <FlexGrow />
@@ -93,6 +119,21 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <Post>Test post</Post>
+        <Post>Test post</Post>
+        <Post>Test post</Post>
+        <Post>Test post</Post>
+        <Post>Test post</Post>
+        <Post>Test post</Post>
+        <Post>Test post</Post>
+        <Post>Test post</Post>
+        <Post>Test post</Post>
+        <Post>Test post</Post>
+        <Post>Test post</Post>
+        <Post>Test post</Post>
+        <Post>Test post</Post>
+        <Post>Test post</Post>
+        <Post>Test post</Post>
       </div>
       <div class={styles.sidebar}></div>
       <FlexGrow />

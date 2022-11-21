@@ -21,7 +21,9 @@
   "prettier": {
     "importOrder": [
       "<THIRD_PARTY_MODULES>",
+      "^@fontsource/.*$",
       "^(\\.\\./)*(utils).*$",
+      "^\\./styles.module.css$",
       "^[./]"
     ],
     "importOrderSeparation": true,

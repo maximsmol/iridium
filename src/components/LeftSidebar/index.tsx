@@ -1,12 +1,19 @@
 import * as Icon from "lucide-solid";
 
-import Button from "../Button";
 import styles from "./styles.module.css";
+
+import Button from "../Button";
 
 export default function LeftSidebar() {
   return (
     <div class={styles.container}>
-      <Button icon={<Icon.Aperture />} labelHidden size="h1" href="/home">
+      <Button
+        icon={<Icon.Aperture />}
+        flavor="secondary-colored"
+        labelHidden
+        size="h1"
+        href="/home"
+      >
         Home
       </Button>
       <nav class={styles.sidebarNav}>
